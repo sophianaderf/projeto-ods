@@ -1,0 +1,897 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ODS 14 - Vida na Água</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #eef8fb;
+            color: #183b4a;
+        }
+
+        /* MENU */
+
+        header {
+            background-color: #087ea4;
+            padding: 18px 8%;
+
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        header h2 {
+            color: white;
+            font-size: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #a9e8f5;
+        }
+
+
+        /* INÍCIO */
+
+        .inicio {
+
+            min-height: 90vh;
+
+            background:
+                linear-gradient(
+                    rgba(0, 80, 110, 0.60),
+                    rgba(0, 80, 110, 0.60)
+                ),
+                url("https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 30px;
+        }
+
+        .inicio-conteudo {
+            color: white;
+            max-width: 850px;
+        }
+
+        .inicio-conteudo span {
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .inicio-conteudo h1 {
+            font-size: 70px;
+            margin: 10px 0;
+            font-weight: 800;
+        }
+
+        .inicio-conteudo h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .inicio-conteudo p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+
+        /* BOTÃO */
+
+        .botao {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 13px 30px;
+
+            background-color: #7ed6e8;
+            color: #073b4c;
+
+            text-decoration: none;
+
+            border-radius: 30px;
+
+            font-weight: 600;
+
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+
+            transform: scale(1.05);
+
+            background-color: #b6edf5;
+        }
+
+
+        /* SEÇÕES */
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            font-size: 35px;
+            color: #087ea4;
+        }
+
+        .titulo p {
+            margin-top: 10px;
+            color: #52717c;
+        }
+
+
+        /* O QUE É */
+
+        .sobre {
+
+            display: flex;
+
+            gap: 50px;
+
+            align-items: center;
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .sobre-texto h3 {
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+            color: #09647f;
+        }
+
+        .sobre-texto p {
+
+            line-height: 1.8;
+
+            margin-bottom: 15px;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+        }
+
+        .sobre-imagem img {
+
+            width: 100%;
+
+            border-radius: 20px;
+
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+
+        /* CARDS */
+
+        .cards {
+
+            display: grid;
+
+            grid-template-columns: repeat(3, 1fr);
+
+            gap: 25px;
+        }
+
+        .card {
+
+            background-color: white;
+
+            padding: 30px;
+
+            border-radius: 18px;
+
+            text-align: center;
+
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+
+            transition: 0.3s;
+        }
+
+        .card:hover {
+
+            transform: translateY(-8px);
+        }
+
+        .icone {
+
+            font-size: 45px;
+
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+
+            color: #087ea4;
+
+            margin-bottom: 10px;
+        }
+
+        .card p {
+
+            line-height: 1.7;
+
+            color: #536c75;
+        }
+
+
+        /* AÇÕES */
+
+        .acoes {
+
+            background-color: #d7f0f5;
+        }
+
+        .lista {
+
+            max-width: 900px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 18px;
+        }
+
+        .item {
+
+            background-color: white;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .item strong {
+
+            color: #087ea4;
+        }
+
+
+        /* IMPORTÂNCIA */
+
+        .importancia {
+
+            text-align: center;
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+        .importancia p {
+
+            line-height: 1.9;
+
+            font-size: 17px;
+        }
+
+
+        /* METAS */
+
+        .metas {
+
+            background-color: #f7fcfd;
+        }
+
+        .metas-container {
+
+            max-width: 1000px;
+
+            margin: auto;
+        }
+
+        .meta {
+
+            background-color: white;
+
+            padding: 25px;
+
+            margin-bottom: 18px;
+
+            border-left: 6px solid #1597b8;
+
+            border-radius: 10px;
+
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        }
+
+        .meta h3 {
+
+            color: #087ea4;
+
+            margin-bottom: 8px;
+        }
+
+        .meta p {
+
+            line-height: 1.7;
+        }
+
+
+        /* RODAPÉ */
+
+        footer {
+
+            background-color: #087ea4;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 35px 20px;
+        }
+
+        footer p {
+
+            margin: 7px;
+        }
+
+        footer a {
+
+            color: #a9e8f5;
+        }
+
+
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+
+            header {
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+            nav a {
+
+                margin: 0 7px;
+
+                font-size: 13px;
+            }
+
+            .inicio-conteudo h1 {
+
+                font-size: 50px;
+            }
+
+            .inicio-conteudo h2 {
+
+                font-size: 22px;
+            }
+
+            .sobre {
+
+                flex-direction: column;
+            }
+
+            .cards {
+
+                grid-template-columns: 1fr;
+            }
+
+            .lista {
+
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+
+    <!-- MENU -->
+
+    <header>
+
+        <h2>🌊 ODS 14</h2>
+
+        <nav>
+
+            <a href="#sobre">O que é?</a>
+
+            <a href="#objetivos">Objetivos</a>
+
+            <a href="#acoes">Ações</a>
+
+            <a href="#metas">Metas</a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- INÍCIO -->
+
+    <section class="inicio">
+
+        <div class="inicio-conteudo">
+
+            <span>OBJETIVO DE DESENVOLVIMENTO SUSTENTÁVEL</span>
+
+            <h1>ODS 14</h1>
+
+            <h2>Vida na Água</h2>
+
+            <p>
+
+                Conservar e usar de forma sustentável os oceanos,
+
+                mares e recursos marinhos para o desenvolvimento sustentável.
+
+            </p>
+
+            <a href="#sobre" class="botao">
+
+                Conheça a ODS 14 ↓
+
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- O QUE É -->
+
+    <section id="sobre">
+
+        <div class="titulo">
+
+            <h2>🌊 O que é a ODS 14?</h2>
+
+            <p>Vida na Água</p>
+
+        </div>
+
+
+        <div class="sobre">
+
+            <div class="sobre-texto">
+
+                <h3>Proteção dos oceanos e mares</h3>
+
+                <p>
+
+                    A ODS 14 é um dos 17 Objetivos de Desenvolvimento
+
+                    Sustentável estabelecidos pela Organização das
+
+                    Nações Unidas (ONU).
+
+                </p>
+
+                <p>
+
+                    Seu objetivo é conservar e utilizar de forma sustentável
+
+                    os oceanos, mares e recursos marinhos, que são fundamentais
+
+                    para a vida no planeta.
+
+                </p>
+
+                <p>
+
+                    A preservação dos ambientes marinhos ajuda a proteger
+
+                    a biodiversidade, garantir alimentos e manter o equilíbrio
+
+                    dos ecossistemas.
+
+                </p>
+
+            </div>
+
+
+            <div class="sobre-imagem">
+
+                <img
+
+                    src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?auto=format&fit=crop&w=900&q=80"
+
+                    alt="Oceano e vida marinha">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- OBJETIVOS -->
+
+    <section id="objetivos">
+
+        <div class="titulo">
+
+            <h2>🎯 Principais objetivos</h2>
+
+            <p>Algumas das prioridades da ODS 14</p>
+
+        </div>
+
+
+        <div class="cards">
+
+
+            <div class="card">
+
+                <div class="icone">🐠</div>
+
+                <h3>Proteger a vida marinha</h3>
+
+                <p>
+
+                    Preservar os ecossistemas marinhos e a biodiversidade
+
+                    dos oceanos, mares e zonas costeiras.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">♻️</div>
+
+                <h3>Reduzir a poluição</h3>
+
+                <p>
+
+                    Combater a poluição dos oceanos causada por resíduos,
+
+                    produtos químicos e outras atividades humanas.
+
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">🌊</div>
+
+                <h3>Uso sustentável</h3>
+
+                <p>
+
+                    Promover o uso responsável dos recursos marinhos
+
+                    para que possam continuar disponíveis no futuro.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- AÇÕES -->
+
+    <section id="acoes" class="acoes">
+
+        <div class="titulo">
+
+            <h2>🌱 O que podemos fazer?</h2>
+
+            <p>
+
+                Nossas atitudes também ajudam a proteger os oceanos.
+
+            </p>
+
+        </div>
+
+
+        <div class="lista">
+
+
+            <div class="item">
+
+                ♻️ <strong>Reduzir o uso de plástico:</strong>
+
+                evitar produtos descartáveis e dar preferência
+
+                a materiais reutilizáveis.
+
+            </div>
+
+
+            <div class="item">
+
+                🗑️ <strong>Descartar o lixo corretamente:</strong>
+
+                evitar que resíduos cheguem aos rios, praias e oceanos.
+
+            </div>
+
+
+            <div class="item">
+
+                🐢 <strong>Proteger os animais marinhos:</strong>
+
+                respeitar a fauna e não interferir em seus habitats.
+
+            </div>
+
+
+            <div class="item">
+
+                🧴 <strong>Consumir conscientemente:</strong>
+
+                escolher produtos que causem menos impactos ambientais.
+
+            </div>
+
+
+            <div class="item">
+
+                🏖️ <strong>Preservar as praias:</strong>
+
+                não deixar lixo na areia e participar de ações de limpeza.
+
+            </div>
+
+
+            <div class="item">
+
+                📢 <strong>Conscientizar outras pessoas:</strong>
+
+                compartilhar informações sobre a importância
+
+                da preservação dos oceanos.
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- IMPORTÂNCIA -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>🌎 Por que a ODS 14 é importante?</h2>
+
+        </div>
+
+
+        <div class="importancia">
+
+            <p>
+
+                Os oceanos cobrem grande parte da superfície do planeta
+
+                e possuem um papel fundamental para o equilíbrio ambiental.
+
+                Eles abrigam uma enorme diversidade de espécies e fornecem
+
+                recursos importantes para milhões de pessoas.
+
+            </p>
+
+            <br>
+
+            <p>
+
+                A poluição, a pesca predatória, a destruição dos habitats
+
+                e as mudanças climáticas ameaçam os ecossistemas marinhos.
+
+                Por isso, proteger os oceanos é essencial para garantir
+
+                um futuro sustentável.
+
+            </p>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- METAS -->
+
+    <section id="metas" class="metas">
+
+        <div class="titulo">
+
+            <h2>📌 Metas da ODS 14</h2>
+
+            <p>
+
+                Algumas das principais metas estabelecidas pela ONU
+
+            </p>
+
+        </div>
+
+
+        <div class="metas-container">
+
+
+            <div class="meta">
+
+                <h3>14.1 — Reduzir a poluição marinha</h3>
+
+                <p>
+
+                    Prevenir e reduzir significativamente a poluição
+
+                    marinha de todos os tipos, especialmente aquela
+
+                    causada por atividades terrestres.
+
+                </p>
+
+            </div>
+
+
+            <div class="meta">
+
+                <h3>14.2 — Proteger os ecossistemas marinhos</h3>
+
+                <p>
+
+                    Gerenciar e proteger de forma sustentável os
+
+                    ecossistemas marinhos e costeiros, evitando
+
+                    impactos negativos significativos.
+
+                </p>
+
+            </div>
+
+
+            <div class="meta">
+
+                <h3>14.4 — Pesca sustentável</h3>
+
+                <p>
+
+                    Regular a pesca e combater práticas de pesca
+
+                    destrutivas, buscando restaurar os estoques
+
+                    de peixes no menor tempo possível.
+
+                </p>
+
+            </div>
+
+
+            <div class="meta">
+
+                <h3>14.5 — Conservação das áreas costeiras</h3>
+
+                <p>
+
+                    Conservar áreas costeiras e marinhas de acordo
+
+                    com as leis nacionais e internacionais.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+
+            🌊 <strong>ODS 14 — Vida na Água</strong>
+
+        </p>
+
+        <p>
+
+            Proteger os oceanos é proteger a vida.
+
+        </p>
+
+        <p>
+
+            Fonte:
+
+            <a
+
+                href="https://brasil.un.org/pt-br/sdgs/14"
+
+                target="_blank">
+
+                Organização das Nações Unidas (ONU)
+
+            </a>
+
+        </p>
+
+    </footer>
+
+
+</body>
+
+</html>
+

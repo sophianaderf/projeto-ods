@@ -1,0 +1,664 @@
+```html
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ODS 13 - Ação contra a Mudança Global do Clima</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            background-color: #eef7ee;
+            color: #263b2a;
+        }
+
+        /* MENU */
+
+        header {
+            background-color: #1f6b45;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+        }
+
+        header h2 {
+            color: white;
+            font-size: 22px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 25px;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #c9f3a7;
+        }
+
+        /* INÍCIO */
+
+        .inicio {
+            min-height: 90vh;
+            background: linear-gradient(
+                rgba(20, 75, 45, 0.65),
+                rgba(20, 75, 45, 0.65)
+            ),
+            url("https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .inicio-conteudo {
+            color: white;
+            max-width: 850px;
+        }
+
+        .inicio-conteudo span {
+            font-size: 22px;
+            font-weight: 500;
+        }
+
+        .inicio-conteudo h1 {
+            font-size: 70px;
+            margin: 10px 0;
+            font-weight: 800;
+        }
+
+        .inicio-conteudo h2 {
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .inicio-conteudo p {
+            font-size: 18px;
+            line-height: 1.8;
+        }
+
+        .botao {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 13px 30px;
+            background-color: #a7d96c;
+            color: #1f3d27;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .botao:hover {
+            transform: scale(1.05);
+            background-color: #c7ec9c;
+        }
+
+        /* SEÇÕES */
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .titulo {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .titulo h2 {
+            font-size: 35px;
+            color: #1f6b45;
+        }
+
+        .titulo p {
+            margin-top: 10px;
+            color: #55705c;
+        }
+
+        /* O QUE É */
+
+        .sobre {
+            display: flex;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .sobre-texto {
+            flex: 1;
+        }
+
+        .sobre-texto h3 {
+            font-size: 28px;
+            margin-bottom: 15px;
+            color: #285d3c;
+        }
+
+        .sobre-texto p {
+            line-height: 1.8;
+            margin-bottom: 15px;
+        }
+
+        .sobre-imagem {
+            flex: 1;
+        }
+
+        .sobre-imagem img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        /* CARDS */
+
+        .cards {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+        }
+
+        .icone {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #1f6b45;
+            margin-bottom: 10px;
+        }
+
+        .card p {
+            line-height: 1.7;
+            color: #53675a;
+        }
+
+        /* AÇÕES */
+
+        .acoes {
+            background-color: #dcefd7;
+        }
+
+        .lista {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+
+        .item {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+        }
+
+        .item strong {
+            color: #1f6b45;
+        }
+
+        /* IMPORTÂNCIA */
+
+        .importancia {
+            text-align: center;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .importancia p {
+            line-height: 1.9;
+            font-size: 17px;
+        }
+
+        /* METAS */
+
+        .metas {
+            background-color: #f8fbf6;
+        }
+
+        .metas-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .meta {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-left: 6px solid #5d9f4e;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.07);
+        }
+
+        .meta h3 {
+            color: #1f6b45;
+            margin-bottom: 8px;
+        }
+
+        .meta p {
+            line-height: 1.7;
+        }
+
+        /* RODAPÉ */
+
+        footer {
+            background-color: #1f6b45;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        footer p {
+            margin: 7px;
+        }
+
+        footer a {
+            color: #c9f3a7;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+
+            header {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 7px;
+                font-size: 13px;
+            }
+
+            .inicio-conteudo h1 {
+                font-size: 50px;
+            }
+
+            .inicio-conteudo h2 {
+                font-size: 22px;
+            }
+
+            .sobre {
+                flex-direction: column;
+            }
+
+            .cards {
+                grid-template-columns: 1fr;
+            }
+
+            .lista {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- MENU -->
+
+    <header>
+
+        <h2>🌎 ODS 13</h2>
+
+        <nav>
+            <a href="#sobre">O que é?</a>
+            <a href="#objetivos">Objetivos</a>
+            <a href="#acoes">Ações</a>
+            <a href="#metas">Metas</a>
+        </nav>
+
+    </header>
+
+
+    <!-- INÍCIO -->
+
+    <section class="inicio">
+
+        <div class="inicio-conteudo">
+
+            <span>OBJETIVO DE DESENVOLVIMENTO SUSTENTÁVEL</span>
+
+            <h1>ODS 13</h1>
+
+            <h2>Ação contra a Mudança Global do Clima</h2>
+
+            <p>
+                Adotar medidas urgentes para combater as mudanças climáticas
+                e seus impactos.
+            </p>
+
+            <a href="#sobre" class="botao">
+                Conheça a ODS 13 ↓
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- O QUE É -->
+
+    <section id="sobre">
+
+        <div class="titulo">
+
+            <h2>🌱 O que é a ODS 13?</h2>
+
+            <p>
+                Ação contra a Mudança Global do Clima
+            </p>
+
+        </div>
+
+        <div class="sobre">
+
+            <div class="sobre-texto">
+
+                <h3>Combater as mudanças climáticas</h3>
+
+                <p>
+                    A ODS 13 é um dos 17 Objetivos de Desenvolvimento
+                    Sustentável estabelecidos pela Organização das Nações
+                    Unidas (ONU).
+                </p>
+
+                <p>
+                    Seu objetivo é tomar medidas urgentes para combater
+                    a mudança do clima e seus impactos, fortalecendo a
+                    capacidade de adaptação das pessoas e dos países.
+                </p>
+
+                <p>
+                    Para isso, são necessárias ações de governos, empresas,
+                    instituições e também da população.
+                </p>
+
+            </div>
+
+            <div class="sobre-imagem">
+
+                <img
+                    src="https://images.unsplash.com/photo-1497435334941-8c899ee9e8e9?auto=format&fit=crop&w=900&q=80"
+                    alt="Natureza e floresta">
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- OBJETIVOS -->
+
+    <section id="objetivos">
+
+        <div class="titulo">
+
+            <h2>🎯 Principais objetivos</h2>
+
+            <p>
+                Algumas das prioridades da ODS 13
+            </p>
+
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+
+                <div class="icone">🌡️</div>
+
+                <h3>Combater as mudanças climáticas</h3>
+
+                <p>
+                    Reduzir os impactos causados pelas mudanças
+                    climáticas e contribuir para um futuro mais sustentável.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">🌧️</div>
+
+                <h3>Adaptar-se aos impactos</h3>
+
+                <p>
+                    Fortalecer a capacidade de adaptação aos riscos
+                    relacionados ao clima e aos desastres naturais.
+                </p>
+
+            </div>
+
+
+            <div class="card">
+
+                <div class="icone">📚</div>
+
+                <h3>Educação ambiental</h3>
+
+                <p>
+                    Aumentar a conscientização e o conhecimento sobre
+                    mudanças climáticas e formas de enfrentá-las.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AÇÕES -->
+
+    <section id="acoes" class="acoes">
+
+        <div class="titulo">
+
+            <h2>🌿 O que podemos fazer?</h2>
+
+            <p>
+                Pequenas atitudes também podem contribuir para a ação climática.
+            </p>
+
+        </div>
+
+        <div class="lista">
+
+            <div class="item">
+                🌱 <strong>Preservar áreas verdes:</strong>
+                proteger florestas e áreas naturais.
+            </div>
+
+            <div class="item">
+                ⚡ <strong>Economizar energia:</strong>
+                evitar desperdícios e utilizar a energia de forma consciente.
+            </div>
+
+            <div class="item">
+                🚲 <strong>Escolher transportes sustentáveis:</strong>
+                quando possível, caminhar, andar de bicicleta ou utilizar
+                transporte coletivo.
+            </div>
+
+            <div class="item">
+                ♻️ <strong>Reduzir desperdícios:</strong>
+                consumir de forma consciente e reaproveitar materiais.
+            </div>
+
+            <div class="item">
+                💧 <strong>Economizar água:</strong>
+                evitar desperdícios e utilizar esse recurso com responsabilidade.
+            </div>
+
+            <div class="item">
+                📢 <strong>Compartilhar conhecimento:</strong>
+                conversar sobre mudanças climáticas e incentivar atitudes
+                sustentáveis.
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- IMPORTÂNCIA -->
+
+    <section>
+
+        <div class="titulo">
+
+            <h2>🌎 Por que a ODS 13 é importante?</h2>
+
+        </div>
+
+        <div class="importancia">
+
+            <p>
+                As mudanças climáticas afetam os ecossistemas, as cidades,
+                a agricultura, a economia e a vida das pessoas. A ONU
+                destaca que as atividades humanas, principalmente a queima
+                de combustíveis fósseis, são o principal fator responsável
+                pelo aumento das mudanças climáticas.
+            </p>
+
+            <br>
+
+            <p>
+                Por isso, é necessário reduzir as emissões de gases de efeito
+                estufa, preparar as comunidades para os impactos do clima
+                e ampliar a educação e a conscientização ambiental.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- METAS -->
+
+    <section id="metas" class="metas">
+
+        <div class="titulo">
+
+            <h2>📌 Metas da ODS 13</h2>
+
+            <p>
+                Algumas das principais metas estabelecidas pela ONU
+            </p>
+
+        </div>
+
+        <div class="metas-container">
+
+            <div class="meta">
+
+                <h3>13.1 — Resiliência e adaptação</h3>
+
+                <p>
+                    Reforçar a capacidade de adaptação e a resiliência
+                    aos riscos relacionados ao clima e aos desastres naturais.
+                </p>
+
+            </div>
+
+
+            <div class="meta">
+
+                <h3>13.2 — Políticas climáticas</h3>
+
+                <p>
+                    Integrar medidas relacionadas às mudanças climáticas
+                    nas políticas, estratégias e planejamentos nacionais.
+                </p>
+
+            </div>
+
+
+            <div class="meta">
+
+                <h3>13.3 — Educação e conscientização</h3>
+
+                <p>
+                    Melhorar a educação e aumentar a conscientização sobre
+                    mitigação, adaptação, redução de impactos e alertas
+                    relacionados às mudanças climáticas.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RODAPÉ -->
+
+    <footer>
+
+        <p>
+            🌎 <strong>ODS 13 — Ação contra a Mudança Global do Clima</strong>
+        </p>
+
+        <p>
+            Cuidar do clima hoje é proteger o futuro.
+        </p>
+
+        <p>
+            Fonte:
+            <a href="https://brasil.un.org/pt/sdgs/13" target="_blank">
+                Organização das Nações Unidas (ONU)
+            </a>
+        </p>
+
+    </footer>
+
+</body>
+
+</html>
+
